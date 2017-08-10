@@ -14,4 +14,10 @@ node {
        junit '**/target/surefire-reports/TEST-*.xml'
        archiveArtifacts 'target/gildedrose-*.jar'
    }
+   stage('javadoc'){
+       
+       sh 'mvn site'
+       archiveArtifacts 'target/javadoc'
+       archiveArtifacts 'target/gildedrose-*.jar'
+   }
 }
